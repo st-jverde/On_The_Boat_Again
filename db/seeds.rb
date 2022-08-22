@@ -15,7 +15,7 @@ puts 'Creating boats...'
 12.times do
   boat = Boat.new(
     name: Faker::Games::Pokemon.name,
-    description: Faker::Lorem.paragraphs,
+    description: Faker::Lorem.paragraphs.join("\n"),
     price: rand(50..150),
     user_id: 1
   )
