@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+puts 'clearing database'
+Boat.destroy_all
+
+puts 'Creating boats...'
+
+12.times do
+  boat = Boat.new(
+    name: Faker::Games::Pokemon.name,
+    description: Faker::Lorem.paragraphs,
+    price: rand(50..150),
+    user_id: 1
+  )
+  boat.save!
+end
+
+puts 'Boats created!'
