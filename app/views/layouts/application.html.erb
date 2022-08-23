@@ -14,7 +14,6 @@
     <%# NAVBAR %>
     <% unless controller_name == "pages"%>
 
-
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <%= link_to "#", class: "navbar-brand" do %>
@@ -58,7 +57,11 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-<%# footer %>
-    <%= render "shared/footer" %>
+    <%# FOOTER %>
+    <footer>
+      <% unless controller_name == "pages"%>
+        <%= render "shared/footer" %>
+      <% end %>
+    </footer>
   </body>
 </html>
