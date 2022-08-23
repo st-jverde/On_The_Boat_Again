@@ -12,9 +12,8 @@
 
   <body>
     <%# NAVBAR %>
-    <%# unless controller_name == "landing" %>
+    <% unless controller_name == "pages"%>
 
-    <%# end %>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <%= link_to root_path, class: "navbar-brand" do %>
@@ -51,13 +50,18 @@
         </div>
       </div>
     </div>
+    <% end %>
 
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-<%# footer %>
-    <%= render "shared/footer" %>
+    <%# FOOTER %>
+    <footer>
+      <% unless controller_name == "pages"%>
+        <%= render "shared/footer" %>
+      <% end %>
+    </footer>
   </body>
 </html>
