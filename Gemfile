@@ -89,3 +89,6 @@ gem "devise"
 
 # Dotenv
 gem "dotenv-rails", groups: [:development, :test]
+
+# Cloudinary
+gem "cloudinary"
