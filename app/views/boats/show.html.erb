@@ -2,5 +2,7 @@
 <p><%= @boat.description %></p>
 <h4>€ <%= @boat.price %></h4>
 
-
-<%= link_to "⬅️ Back to all boats", boat_path %>
+<% photos = @boat.photos %>
+<% photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
