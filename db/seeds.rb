@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require "open-uri"
 
-puts 'clearing database'
+puts 'Clearing database ✨ ...'
 Boat.destroy_all
 
-puts 'Creating boats...'
+puts 'Fetching the wood, building the boats 🛥️ ...'
 
 12.times do
   boat = Boat.new(
@@ -19,7 +20,14 @@ puts 'Creating boats...'
     price: rand(50..150),
     user_id: 1
   )
+  file = URI.open("https://source.unsplash.com/random/900x700/?boat")
+  file2 = URI.open("https://source.unsplash.com/random/900x700/?boat")
+  file3 = URI.open("https://source.unsplash.com/random/900x700/?boat")
+  boat.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+  boat.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
+  boat.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
   boat.save!
 end
+
 
 puts 'Boats created!'
