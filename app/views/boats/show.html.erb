@@ -2,5 +2,6 @@
 <p><%= @boat.description %></p>
 <h4>€ <%= @boat.price %></h4>
 
-
+<%= cl_image_tag("mxklrxry4tokxvlzvavn",
+      width: 400, height: 300, crop: :fill) %>
 <%= link_to "⬅️ Back to all boats", boat_path %>
