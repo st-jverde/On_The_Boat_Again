@@ -1,0 +1,11 @@
+<%= link_to 'Log in', new_user_session_path %>
+<%= link_to 'sign up', new_user_registration_path %>
+<h1>See all our boats</h1>
+
+<ul>
+  <% @boats.each do |boat| %>
+    <li><%= link_to boat.name, boat_path(boat) %></li>
+  <% end %>
+</ul>
+
+<%= link_to '➕ Add boat', new_boat_path %>
