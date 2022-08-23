@@ -1,1 +1,55 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: url('landingpage_img.png');
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  width: 710px;
+  height: 131px;
+  left: 122px;
+  top: 308px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+h2 {
+  position: absolute;
+  width: 620px;
+  height: 64px;
+  left: 122px;
+  top: 468px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 32px;
+}
+
+.btn1 {
+  position: absolute;
+  width: 224px;
+  height: 54px;
+  left: 122px;
+  top: 561px;
+}
+
+
+.btn2 {
+  position: absolute;
+  width: 223px;
+  height: 54px;
+  left: 365px;
+  top: 561px;
+}
