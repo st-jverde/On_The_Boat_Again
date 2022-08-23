@@ -3,5 +3,5 @@ class Boat < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many_attached :photos
 
-  validates :name, :price, presence: true
+  validates :name, :price, :number_of_people, presence: true
 end
