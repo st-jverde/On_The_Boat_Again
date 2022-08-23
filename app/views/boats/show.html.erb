@@ -1,6 +1,6 @@
 <h1><%= @boat.name %></h1>
 <p><%= @boat.description %></p>
-<h4>€ <%= @boat.price %></h4>
+<h4>€ <%= number_with_precision(@boat.price, precision: 2) %></h4>
 
 <% photos = @boat.photos %>
 <% photos.each do |photo| %>
