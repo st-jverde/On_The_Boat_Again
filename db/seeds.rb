@@ -17,6 +17,7 @@ puts 'Fetching the wood, building the boats 🛥️ ...'
   boat = Boat.new(
     name: Faker::Games::Pokemon.name,
     description: Faker::Lorem.paragraphs.join("\n"),
+    number_of_people: rand(5..15),
     price: rand(50..150),
     user_id: 1
   )
