@@ -46,14 +46,6 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 
-# CUSTOM GEMS
-
-# Faker
-gem "faker"
-
-# Authentication with devise
-gem "devise"
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -84,3 +76,16 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+
+### CUSTOM GEMS
+
+# Faker
+gem "faker"
+
+# Authentication with devise
+gem "devise"
+
+# Dotenv
+gem "dotenv-rails", groups: [:development, :test]
