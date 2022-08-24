@@ -13,11 +13,13 @@
 }
 
 .profile-card {
-	background-color: #eae1e1;
   margin-bottom: 20px;
   // border: 0.5em;
   // border-color: black;
   // border-radius: 0.6em;
+  background: #FFFFFF;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
 
 .profile-pic {
@@ -42,7 +44,7 @@
 
 .hvr-underline-from-center {
   justify-content: center;
-  color:#000000
+  color:#000000;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-style: normal;
@@ -51,9 +53,17 @@
 }
 
 .profile-info h2 {
-	color: #E8E8E8;
-    letter-spacing: 4px;
-    padding-bottom: 12px;
+  letter-spacing: 4px;
+  padding-bottom: 12px;
+  letter-spacing: 4px;
+  padding-bottom: 12px;
+  justify-content: center;
+  color:#000000;
+  font-family: ‘Roboto’, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .profile-card:hover .profile-pic {
