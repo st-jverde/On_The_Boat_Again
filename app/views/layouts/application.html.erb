@@ -11,18 +11,17 @@
   </head>
 
   <body>
-    <%# NAVBAR %>
-    <% unless controller_name == "pages"%>
-
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <div class="container-fluid">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <div class="page-container">
+      <div class="navbar-container">
+        <% unless controller_name == "pages"%>
+          <%= render "shared/navbar" %>
         <% end %>
+      </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="content-container">
+        <%= render "shared/flashes" %>
+        <%= yield %>
+      </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
@@ -48,20 +47,11 @@
               <% end %>
           </ul>
         </div>
+      <div class="footer-container">
+        <% unless controller_name == "pages"%>
+            <%= render "shared/footer" %>
+        <% end %>
       </div>
     </div>
-    <% end %>
-
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
-    <%# FOOTER %>
-    <footer>
-      <% unless controller_name == "pages"%>
-        <%= render "shared/footer" %>
-      <% end %>
-    </footer>
   </body>
 </html>

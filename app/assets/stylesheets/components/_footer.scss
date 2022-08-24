@@ -7,5 +7,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 0px;
+}
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
