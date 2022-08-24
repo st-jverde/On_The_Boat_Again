@@ -7,8 +7,8 @@
       <%= link_to boat_path(boat) do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path boat.photos.first.key %>')">
           <h4 class="card-category-text"><%= boat.name %></h4>
-          <p class="card-category-text">Number of people: <%= boat.number_of_people %></p>
-          <p class="card-category-text price">€ <%= number_with_precision(boat.price, precision: 2) %> per day</p>
+          <p class="card-category-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
+          <p class="card-category-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
         </div>
       <% end %>
     <% end %>
