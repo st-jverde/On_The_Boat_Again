@@ -23,11 +23,11 @@
         <%= yield %>
       </div>
 
-        <div class="footer-container">
-          <% unless controller_name == "pages"%>
-              <%= render "shared/footer" %>
-          <% end %>
-        </div>
+      <div class="footer-container">
+        <% unless controller_name == "pages"%>
+            <%= render "shared/footer" %>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>
