@@ -8,6 +8,22 @@
   background-size: cover;
   position: relative;
   background-color: white;
+
+  h2 {
+    width: 620px;
+    height: 64px;
+    left: 122px;
+    top: 468px;
+
+    position: absolute;
+    color: #535353;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+  }
 }
 
 
@@ -24,24 +40,6 @@
   font-weight: 700;
   font-size: 60px;
   line-height: 70px;
-}
-
-
-
-h2 {
-  position: absolute;
-  width: 620px;
-  height: 64px;
-  left: 122px;
-  top: 468px;
-
-  color: #535353;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 32px;
 }
 
 .btn1 {
