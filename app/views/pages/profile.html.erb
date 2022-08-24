@@ -1,20 +1,36 @@
-<div class="profile">
-  <h1>My profile</h1>
-</div>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-4">
       <div class="profile-card text-center">
         <div class="profile-info">
-            <img class="profile-pic" src="https://pbs.twimg.com/profile_images/910579937089859584/rbsL-1ze_400x400.jpg">
+            <img class="profile-pic" src="https://www.udiscovermusic.nl/wp-content/uploads/sites/5/2018/08/macca.jpg">
             <h2 class="hvr-underline-from-center">Paul McCartney</h2>
             <p>I am a British vocalist, songwriter, composer, bass player, poet, and painter. I worked with the Beatles in the 1960s and helped lift popular music into a creative, highly commercial art form.</p>
+        </div>
+      </div>
+      <div class="my-booking profile-card">
+      <div class="container">
+        <h2 class="text-center">My rentals</h2>
+        <div class="cards m-5">
+          <ul style="list-style: none;">
+            <% @bookings.each do |booking| %>
+              <li><h3>Rented on:</h3></li>
+              <li><p><%= booking.date %></p></li>
+              <li><h3>By:</h3></li>
+              <li><p><%= booking.user.first_name %> <%= booking.user.last_name %></p></li>
+              <div class="cards">
+                <% @my_boats.each do |boat| %>
+                  <%= render 'shared/boat', boat: boat %>
+                <% end %>
+              </div>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <%# <h1>My boats</h1>
 <h1>My rentals</h1> %>
