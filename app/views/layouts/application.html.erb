@@ -58,10 +58,10 @@
       <%= yield %>
     </div>
     <%# FOOTER %>
-    <footer>
-      <% unless controller_name == "pages"%>
+    <% unless controller_name == "pages"%>
+      <footer>
         <%= render "shared/footer" %>
-      <% end %>
-    </footer>
+      </footer>
+    <% end %>
   </body>
 </html>
