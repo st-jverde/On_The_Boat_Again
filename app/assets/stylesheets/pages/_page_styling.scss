@@ -1,3 +1,5 @@
+// Index page
+
 .page-text{
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -17,12 +19,18 @@
   margin-bottom: 10px;
 }
 
+// show page
+
 .text-button {
   display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 20px;
+  line-height: 1.5em;
 }
 
 .show-text {
-  width: 50%;
+  width: 40vw;
   margin: 10px;
 }
 
@@ -32,7 +40,7 @@
   // height: 54px;
   // left: 122px;
   // top: 561px;
-
+  padding-right: 15px;
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;

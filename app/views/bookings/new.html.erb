@@ -1,0 +1,11 @@
+<div class="form-flex-wrapper">
+  <h1> Booking request for <%= @boat.name %> </h1>
+  <div class="border p-4 new-boat-form">
+    <%= simple_form_for [@boat, @booking] do |f| %>
+      <%= f.input :date %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Book", class: "btn new-boat-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
