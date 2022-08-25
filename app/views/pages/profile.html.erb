@@ -6,13 +6,14 @@
             <img class="profile-pic" src="https://www.udiscovermusic.nl/wp-content/uploads/sites/5/2018/08/macca.jpg">
             <h1 class="hvr-underline-from-center"> <%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %> </h1>
             <p class="bio"> <%= current_user.bio %></p>
+            <%= link_to 'Edit', edit_user_registration_path %>
         </div>
       </div>
 
       <div class="my-boats">
         <div class="container">
-          <div class="cards-wrapper">
-            <h1 class="text-center">My boats</h1>
+          <div class="cards-wrapper text-center">
+            <h1>My boats</h1>
             <% @my_boats = current_user.boats %>
             <% @my_boats.each do |boat| %>
                 <div class="card-product my-3">
@@ -31,10 +32,10 @@
         </div>
       </div>
 
-      <div class="my-booking">
+      <div class="my-booking text-center">
         <div class="container">
           <div class="cards-wrapper">
-            <h1 class="text-center">My rentals</h1>
+            <h1>My rentals</h1>
             <% @bookings = current_user.bookings %>
             <% @bookings.each do |booking| %>
                 <div class="card-product my-3">
