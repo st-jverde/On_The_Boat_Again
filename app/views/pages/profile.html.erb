@@ -21,6 +21,7 @@
                     <h3 class="card-category-text"><%= link_to boat.name, boat_path(boat) %></h3>
                     <p class="card-category-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
                     <p class="card-category-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
+                    <%= link_to 'Delete', boat_path(boat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
                   </div>
                 </div>
               </a>

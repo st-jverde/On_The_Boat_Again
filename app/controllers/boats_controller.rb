@@ -23,6 +23,26 @@ class BoatsController < ApplicationController
     end
   end
 
+  def destroy
+    boat = Boat.find(params[:id])
+    boat.destroy
+
+    redirect_to profile_path, status: :see_other
+  end
+
+  def edit; end
+
+  def update
+    @restaurant.update(restaurant_params)
+    @restaurant.save
+
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def boat_params
