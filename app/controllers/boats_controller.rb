@@ -5,7 +5,9 @@ class BoatsController < ApplicationController
     @boats = Boat.all
   end
 
-  def show; end
+  def show
+    # raise
+  end
 
   def new
     @boat = Boat.new
