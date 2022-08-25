@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
+  resources :bookings, only: :destroy
+
+  # resources :users, only: [:show, :edit, :update]
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

@@ -14,7 +14,7 @@
   <body>
     <div class="page-container">
       <div class="navbar-container">
-        <% unless controller_name == "pages/home"%>
+        <% unless action_name == "home"%>
           <%= render "shared/navbar" %>
         <% end %>
       </div>
@@ -24,7 +24,7 @@
         <%= yield %>
       </div>
       <div class="footer-container">
-        <% unless controller_name == "pages"%>
+        <% unless action_name == "home"%>
             <%= render "shared/footer" %>
         <% end %>
       </div>

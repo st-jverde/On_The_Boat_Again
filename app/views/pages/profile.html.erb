@@ -1,39 +1,69 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-4">
+    <div class="col-9">
       <div class="profile-card text-center">
-        <div class="profile-info">
+        <div class="profile-info d-flex flex-column">
             <img class="profile-pic" src="https://www.udiscovermusic.nl/wp-content/uploads/sites/5/2018/08/macca.jpg">
-            <h2 class="hvr-underline-from-center">Paul McCartney</h2>
-            <p>I am a British vocalist, songwriter, composer, bass player, poet, and painter. I worked with the Beatles in the 1960s and helped lift popular music into a creative, highly commercial art form.</p>
+            <h1 class="hvr-underline-from-center"> <%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %> </h1>
+            <p class="bio"> <%= current_user.bio %></p>
+            <%= link_to 'Edit', edit_user_registration_path %>
         </div>
       </div>
-      <div class="my-booking profile-card">
-      <div class="container">
-        <h2 class="text-center">My rentals</h2>
-        <div class="cards m-5">
-          <ul style="list-style: none;">
-            <% @bookings.each do |booking| %>
-              <li><h3>Rented on:</h3></li>
-              <li><p><%= booking.date %></p></li>
-              <li><h3>By:</h3></li>
-              <li><p><%= booking.user.first_name %> <%= booking.user.last_name %></p></li>
-              <div class="cards">
-                <% @my_boats.each do |boat| %>
-                  <%= render 'shared/boat', boat: boat %>
-                <% end %>
-              </div>
+
+      <div class="my-boats">
+        <div class="container">
+          <div class="cards-wrapper text-center">
+            <h1>My boats</h1>
+            <% @my_boats = current_user.boats %>
+            <% @my_boats.each do |boat| %>
+                <div class="card-product my-3">
+                  <div class="card-product-img" style="background-image: url('<%= cl_image_path boat.photos.first.key, height: 170, crop: :fill %>')"></div>
+                  <div class="card-product-infos p-3">
+                    <h3 class="card-category-text"><%= link_to boat.name, boat_path(boat) %></h3>
+                    <p class="card-category-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
+                    <p class="card-category-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
+                    <%= link_to 'Edit', edit_boat_path(boat) %>
+                    <%= link_to 'Delete', boat_path(boat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+                  </div>
+                </div>
+              </a>
             <% end %>
-          </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-booking text-center">
+        <div class="container">
+          <div class="cards-wrapper">
+            <h1>My rentals</h1>
+            <% @bookings = current_user.bookings %>
+            <% @bookings.each do |booking| %>
+                <div class="card-product my-3">
+                  <div class="card-product-img" style="background-image: url('<%= cl_image_path booking.boat.photos.first.key, height: 170, crop: :fill %>')"></div>
+                  <div class="card-product-infos p-3">
+                    <h3 class="card-category-text"><%= link_to booking.boat.name, boat_path(booking.boat) %></h3>
+                    <h4>Date <%= booking.date.strftime('%b/%d/%Y') %></h4>
+                    <p class="card-category-text"><i class="fa-solid fa-user"> <%= booking.boat.number_of_people %></i></p>
+                    <p class="card-category-text price">€ <%= number_with_precision(booking.boat.price, precision: 2) %> p/d</p>
+                    <%= link_to 'Cancel', booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+                  </div>
+                </div>
+              </a>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<%# 200 x 170px
+ %>
 
-<%# <h1>My boats</h1>
-<h1>My rentals</h1> %>
+
+
+
+
 
 <%# below here needs to include the cards of boats listed for rent%>
 <%# link to DB:create_boats to bring boat card info%>

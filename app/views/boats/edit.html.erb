@@ -1,16 +1,18 @@
 <div class="form-flex-wrapper">
-    <h1>List your boat</h1>
+  <h1>Edit</h1>
   <div class="border p-4 new-boat-form">
-    <%= simple_form_for(@boat) do |f| %>
+  <% boat = Boat.find(params[:id]) %>
+    <%= simple_form_for(boat) do |f| %>
       <%= f.input :name, wrapper_html: { class:  'type' }%>
       <%= f.input :description %>
-      <%= f.input :address %>
       <%= f.input :price %>
       <%= f.input :number_of_people %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <div class="d-flex justify-content-center">
-        <%= f.submit "Add Boat", class: "btn new-boat-btn" %>
+        <%= f.submit "Submit", class: "btn new-boat-btn" %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+<%= link_to "Back", :back %>
