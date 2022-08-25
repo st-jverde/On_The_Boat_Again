@@ -3,10 +3,22 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
+    # @markers = @boats.geocoded.map do |boat|
+    #   {
+    #     lat: boat.latitude,
+    #     lng: boat.longitude,
+    #     # info_window: render_to_string(partial: "info_window", locals: {boat: boat})
+
+    #   }
   end
 
   def show
-    # raise
+    @marker =
+      {
+        lat: @boat.latitude,
+        lng: @boat.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: {boat: @boat})
+      }
   end
 
   def new
@@ -27,7 +39,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :description, :price, :number_of_people, photos: [])
+    params.require(:boat).permit(:name, :description, :price, :number_of_people, :address, photos: [])
   end
 
   def set_boat
