@@ -1,22 +1,45 @@
 <div class="container">
-  <div class="text-button">
-    <div class="show-text">
-      <h1><%= @boat.name %></h1>
-      <p>Number of people: <%= @boat.number_of_people %></p></p>
-      <br>
-      <p><%= @boat.description %></p>
-      <h4>€ <%= number_with_precision(@boat.price, precision: 2) %></h4>
-      <br>
+  <div class="text-img">
+    <div class="text-button">
+      <div class="show-text">
+        <h1><%= @boat.name %></h1>
+        <p><i class="fa-solid fa-user"></i> <%= @boat.number_of_people %></p>
+        <br>
+        <h4>About this boat</h4>
+        <p class="w-75"><%= @boat.description %></p>
+
+        <h4>€ <%= number_with_precision(@boat.price, precision: 2) %> p/d</h4>
+        <br>
+      </div>
+
+      <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
+    </div>
+      <%# CAROUSEL %>
+
+    <div id="carouselExampleIndicators" class="carousel slide w-50 h-100" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag @boat.photos.first.key, class: "d-block w-100" %>
+      </div>
+      <% @boat.photos.drop(1).each do |photo| %>
+        <div class="carousel-item">
+          <%= cl_image_tag photo.key, class: "d-block w-100" %>
+        </div>
+      <% end %>
     </div>
 
-    <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
-
-  </div>
-
-  <div class="show-img">
-    <% photos = @boat.photos %>
-    <% photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
