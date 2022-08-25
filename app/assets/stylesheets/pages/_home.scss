@@ -8,16 +8,41 @@
   background-size: cover;
   position: relative;
   background-color: white;
+  font-family: 'Roboto', sans-serif;
+
+  .homepage-content {
+    margin: 110px 0 0 40px;
+  }
+
+  .banner-title  {
+    // position: absolute;
+    // width: 710px;
+    // height: 131px;
+    // left: 122px;
+    // top: 308px;
+
+    margin-top: 100px;
+    width: 700px;
+
+    font-weight: bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
 
   h2 {
-    width: 620px;
-    height: 64px;
-    left: 122px;
-    top: 468px;
+    // position: absolute;
+    // width: 620px;
+    // height: 64px;
+    // left: 122px;
+    // top: 468px;
 
-    position: absolute;
+    margin-top: 25px;
+    width: 475px;
+
     color: #535353;
-    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     font-style: normal;
     font-weight: 400;
@@ -26,42 +51,33 @@
   }
 }
 
-
-.banner-title  {
-  position: absolute;
-  width: 710px;
-  height: 131px;
-  left: 122px;
-  top: 308px;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 70px;
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  padding-right: 10px;
 }
 
 .btn1 {
-  position: absolute;
-  width: 224px;
-  height: 54px;
-  left: 122px;
-  top: 561px;
-
+  // position: absolute;
+  // width: 224px;
+  // height: 54px;
+  // left: 122px;
+  // top: 561px;
+  margin-right: 10px;
   box-sizing: border-box;
   appearance: none;
-  background-color: transparent;
-  border: 2px solid $blue-gray;
+  background-color: $blue-gray;
+  border: 1px solid $blue-gray;
   border-radius: 0.6em;
-  color: $blue-gray;
+  color: white;
   cursor: pointer;
   display: flex;
   align-self: center;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
-  padding: 1em 1em;
+  padding: 1.1em 1.2em;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
@@ -70,27 +86,27 @@
 
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
-    box-shadow: 0 0 40px 40px $blue-gray inset;
+    box-shadow: 0 0 40px 40px white inset;
   }
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: $blue-gray;
     outline: 0;
   }
 }
 
 .btn2 {
-  position: absolute;
-  width: 223px;
-  height: 54px;
-  left: 365px;
-  top: 561px;
+  // position: absolute;
+  // width: 223px;
+  // height: 54px;
+  // left: 365px;
+  // top: 561px;
 
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
-  border: 2px solid $blue-gray;
+  border: 1px solid $blue-gray;
   border-radius: 0.6em;
   color: $blue-gray;
   cursor: pointer;
@@ -99,12 +115,11 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
-  padding: 1.2em 2.8em;
+  padding: 1.1em 1.2em;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
