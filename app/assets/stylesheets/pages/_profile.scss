@@ -42,7 +42,7 @@
 }
 
 
-.hvr-underline-from-center {
+.hvr-underline-from-center h1 {
   justify-content: center;
   color:#000000;
   font-family: 'Roboto', sans-serif;
@@ -156,9 +156,18 @@
   text-shadow: none;
 }
 
-.bio{
+.bio {
   justify-content: center;
   padding: 1rem 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.text-center {
+  letter-spacing: 2px;
+  font-family: ‘Roboto’, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
 }
