@@ -2,26 +2,27 @@
   <div class="row justify-content-center">
     <div class="col-9">
       <div class="profile-card text-center">
-        <div class="profile-info">
+        <div class="profile-info d-flex flex-column">
             <img class="profile-pic" src="https://www.udiscovermusic.nl/wp-content/uploads/sites/5/2018/08/macca.jpg">
-            <h2 class="hvr-underline-from-center"> <%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %> </h2>
-            <p> <%= "#{current_user.bio}" %></p>
+            <h1 class="hvr-underline-from-center"> <%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %> </h1>
+            <p class="bio"> <%= "#{current_user.bio}" "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. "%></p>
         </div>
       </div>
       <div class="my-booking">
         <div class="container">
           <div class="cards-wrapper">
-            <h2 class="text-center">My rentals</h2>
+            <h1 class="text-center">My rentals</h1>
             <% @bookings.each do |booking| %>
-              <div class="card-product my-3">
-                <div style="background-image: url('<%= cl_image_path booking.boat.photos.first.key, height: 170, width: 200, crop: :fill %>')"></div>
-                <div class="card-product-infos p-3">
-                  <h3 class="card-category-text"><%= link_to "#{booking.boat.name}", to: boat_path(booking.boat) %></h3>
-                  <h4>Rented on <%= booking.date.strftime('%b/%d/%Y') %></h4>
-                  <p class="card-category-text"><i class="fa-solid fa-user"> <%= booking.boat.number_of_people %></i></p>
-                  <p class="card-category-text price">€ <%= number_with_precision(booking.boat.price, precision: 2) %> p/d</p>
+                <div class="card-product my-3">
+                  <div class="card-product-img" style="background-image: url('<%= cl_image_path booking.boat.photos.first.key, height: 170, crop: :fill %>')"></div>
+                  <div class="card-product-infos p-3">
+                    <h3 class="card-category-text"><%= link_to booking.boat.name, boat_path(booking.boat) %></h3>
+                    <h4>Rented on <%= booking.date.strftime('%b/%d/%Y') %></h4>
+                    <p class="card-category-text"><i class="fa-solid fa-user"> <%= booking.boat.number_of_people %></i></p>
+                    <p class="card-category-text price">€ <%= number_with_precision(booking.boat.price, precision: 2) %> p/d</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             <% end %>
           </div>
         </div>
