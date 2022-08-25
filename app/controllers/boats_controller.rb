@@ -33,11 +33,10 @@ class BoatsController < ApplicationController
   def edit; end
 
   def update
-    @restaurant.update(restaurant_params)
-    @restaurant.save
+    @boat = Boat.find(params[:id])
 
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
+    if @boat.update(boat_params)
+      redirect_to boat_path(@boat)
     else
       render :new, status: :unprocessable_entity
     end

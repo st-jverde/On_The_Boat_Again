@@ -21,6 +21,7 @@
                     <h3 class="card-category-text"><%= link_to boat.name, boat_path(boat) %></h3>
                     <p class="card-category-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
                     <p class="card-category-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
+                    <%= link_to 'Edit', edit_boat_path(boat) %>
                     <%= link_to 'Delete', boat_path(boat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
                   </div>
                 </div>
@@ -40,9 +41,10 @@
                   <div class="card-product-img" style="background-image: url('<%= cl_image_path booking.boat.photos.first.key, height: 170, crop: :fill %>')"></div>
                   <div class="card-product-infos p-3">
                     <h3 class="card-category-text"><%= link_to booking.boat.name, boat_path(booking.boat) %></h3>
-                    <h4>Rented on <%= booking.date.strftime('%b/%d/%Y') %></h4>
+                    <h4>Date <%= booking.date.strftime('%b/%d/%Y') %></h4>
                     <p class="card-category-text"><i class="fa-solid fa-user"> <%= booking.boat.number_of_people %></i></p>
                     <p class="card-category-text price">€ <%= number_with_precision(booking.boat.price, precision: 2) %> p/d</p>
+                    <%= link_to 'Cancel', booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
                   </div>
                 </div>
               </a>

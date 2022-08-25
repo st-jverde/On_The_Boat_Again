@@ -11,15 +11,12 @@
                 input_html: { autocomplete: "first_name" }%>
     <%= f.input :last_name,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "last_name" }%>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :bio,
-                required: true,
-                autofocus: true,
+                required: false,
                 input_html: { autocomplete: "bio" } %>
     <%= f.input :password,
                 required: true,
