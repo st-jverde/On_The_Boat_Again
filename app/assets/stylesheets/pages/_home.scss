@@ -11,7 +11,7 @@
   font-family: 'Roboto', sans-serif;
 
   .homepage-content {
-    margin: 110px 0 0 40px;
+    margin: 140px 0 0 30px;
   }
 
   .banner-title  {
@@ -31,6 +31,13 @@
     line-height: 70px;
   }
 
+  .home-logo {
+    height: 140px;
+    width: 140px;
+    margin-top: 40px;
+    margin-left: 70px;
+  }
+
 
   h2 {
     // position: absolute;
@@ -42,7 +49,7 @@
     margin-top: 25px;
     width: 475px;
 
-    color: #535353;
+    color: $grayboat;
     font-weight: lighter;
     font-style: normal;
     font-weight: 400;

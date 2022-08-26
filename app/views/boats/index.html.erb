@@ -1,5 +1,7 @@
-<h1 class="page-text">Find a boat</h1>
-<p class="page-text">Rent one of our beautiful boats for a lovely day on the water in Amsterdam</p>
+<div class="container text-center index-intro">
+  <h1 class="introduction-title">Find a boat</h1>
+  <p class="page-text">Rent a beautiful boat for a lovely day on the water in Amsterdam. <br> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+</div>
 
 <div class="container">
   <div class="cards m-5">
@@ -13,10 +15,6 @@
   </div>
 </div>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+
 
 <%# height: 300, width: 400, crop: :fill %>
