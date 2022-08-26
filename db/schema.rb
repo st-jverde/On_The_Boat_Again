@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_133747) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "number_of_people"
+    t.integer "seats"
     t.string "address"
     t.float "latitude"
     t.float "longitude"

@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="text-img">
-    <div class="text-button">
+  <div class="row mt-5">
+    <div class="text-button col-12 col-lg-6">
       <div class="show-text">
         <h1><%= @boat.name %></h1>
         <p><i class="fa-solid fa-user"></i> <%= @boat.number_of_people %></p>
@@ -11,12 +11,16 @@
         <h4>€ <%= number_with_precision(@boat.price, precision: 2) %> p/d</h4>
         <br>
       </div>
-
-      <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
+      <% if @boat.user != current_user %>
+        <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
+      <% else %>
+        <div class="container d-flex flex-row justify-content-start"><%= link_to 'Edit your boat', edit_boat_path(@boat), class: "btn-booking" %>
+        <%= link_to 'Delete', boat_path(@boat), class: "btn-booking", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%></div>
+      <% end %>
     </div>
       <%# CAROUSEL %>
 
-    <div id="carouselExampleIndicators" class="carousel slide w-50 h-100" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel slide w-50 h-100 col-12 col-lg-6" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -41,17 +45,15 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-
-      <%# MAP %>
-    <div class="map">
-      <div style="height: 300px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-
   </div>
 </div>
+
+  <div class="map">
+    <div style="height: 600px;"
+      data-controller="map"
+      data-map-marker-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 
 <%= link_to "⬅️ Back", :back %>
