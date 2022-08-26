@@ -5,10 +5,14 @@
         <h1><%= @boat.name %></h1>
         <p><i class="fa-solid fa-user"></i> <%= @boat.number_of_people %></p>
         <br>
-        <h4>About this boat</h4>
-        <p class="w-75"><%= @boat.description %></p>
+        <p class="w-75">
+          <%= @boat.description %>
+          <br>
+          <br>
+          <strong>Pick up address:</strong> <%= @boat.address %>
+        </p>
 
-        <h4>€ <%= number_with_precision(@boat.price, precision: 2) %> p/d</h4>
+        <h3>€ <%= number_with_precision(@boat.price, precision: 2) %></h3>
         <br>
       </div>
       <% if @boat.user != current_user %>
@@ -57,5 +61,6 @@
 
   </div>
 </div>
-
-<%= link_to "⬅️ Back", :back %>
+<%= link_to :back, class: "black-back-link" do %>
+  <i class="fa-solid fa-arrow-rotate-left"></i> Back
+<% end %>
