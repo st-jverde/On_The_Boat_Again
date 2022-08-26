@@ -11,8 +11,12 @@
         <h4>€ <%= number_with_precision(@boat.price, precision: 2) %> p/d</h4>
         <br>
       </div>
-
-      <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
+      <% if @boat.user != current_user %>
+        <%= link_to 'Book this boat', new_boat_booking_path(@boat), class: "btn-booking" %>
+      <% else %>
+        <div class="container d-flex flex-row justify-content-start"><%= link_to 'Edit your boat', edit_boat_path(@boat), class: "btn-booking" %>
+        <%= link_to 'Delete', boat_path(@boat), class: "btn-booking", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%></div>
+      <% end %>
     </div>
       <%# CAROUSEL %>
 
