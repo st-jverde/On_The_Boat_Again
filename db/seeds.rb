@@ -253,5 +253,4 @@ file24 = URI.open("app/assets/images/boatpics/jan-gemerle-RG-12qdIW8w-unsplash.j
 boat16.photos.attach(io: file24, filename: "boat.png", content_type: "image/png")
 boat16.save!
 
-
 puts 'Boats created!'
