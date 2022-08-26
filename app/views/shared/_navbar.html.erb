@@ -17,7 +17,7 @@
             <%= link_to "list a boat", new_boat_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "profile-ph.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "profile.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" onclick="this.classList.toggle('active');">
               <%= link_to "my profile", profile_path, class: "dropdown-item" %>
               <%= link_to "log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
