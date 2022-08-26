@@ -35,9 +35,8 @@ boat1 = Boat.new(
   description: "Rent, rent me do, You know I love you I'll always be true So please, love me do Whoa, love me do
   Love, love me do You know I love you I'll always be true So please, love me do Whoa, love me do
   Someone to love Somebody new Someone to love Someone like you
-  Love, love me do You know I love you I'll always be true So please, love me do Whoa, love me do
-  Love, love me do You know I love you I'll always be true So please, love me do Whoa, love me do Yeah, love me do Whoa, oh, love me do",
-  number_of_people: 15,
+  Love, love me do You know I love you I'll always be true So please, love me do Whoa, love me do",
+  number_of_people: 4,
   price: 200,
   address: "Prinsengracht, 25, Amsterdam",
   user_id: 1
