@@ -6,7 +6,9 @@
             <img class="profile-pic" src="https://www.udiscovermusic.nl/wp-content/uploads/sites/5/2018/08/macca.jpg">
             <h1 class="hvr-underline-from-center"> <%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %> </h1>
             <p class="bio"> <%= current_user.bio %></p>
-            <%= link_to 'Edit', edit_user_registration_path %>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa-solid fa-pen-to-square icon-link"></i>
+            <% end %>
         </div>
       </div>
 
@@ -18,12 +20,20 @@
             <% @my_boats.each do |boat| %>
                 <div class="card-product my-3">
                   <div class="card-product-img" style="background-image: url('<%= cl_image_path boat.photos.first.key, height: 170, crop: :fill %>')"></div>
-                  <div class="card-product-infos p-3">
-                    <h3 class="card-cat-text"><%= link_to boat.name, boat_path(boat) %></h3>
-                    <p class="card-cat-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
-                    <p class="card-cat-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
-                    <%= link_to 'Edit', edit_boat_path(boat) %>
-                    <%= link_to 'Delete', boat_path(boat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+                  <div class="w-100 d-flex justify-content-between align-items-center">
+                    <div class="card-product-infos p-3">
+                      <h3 class="card-cat-text"><%= link_to boat.name, boat_path(boat) %></h3>
+                      <p class="card-cat-text"><i class="fa-solid fa-user"> <%= boat.number_of_people %></i></p>
+                      <p class="card-cat-text price">€ <%= number_with_precision(boat.price, precision: 2) %> p/d</p>
+                    </div>
+                    <div class="p-3">
+                      <%= link_to edit_boat_path(boat) do %>
+                        <i class="fa-solid fa-pen-to-square icon-link"></i>
+                      <% end %>
+                      <%= link_to boat_path(boat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                        <i class="fa-solid fa-trash icon-link"></i>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -57,8 +67,7 @@
   </div>
 </div>
 
-<%# 200 x 170px
- %>
+<%# 200 x 170px%>
 
 
 

@@ -24,7 +24,7 @@
         <%= yield %>
       </div>
       <div class="footer-container">
-        <% unless action_name == "home"%>
+        <% unless action_name == "home" || action_name ==  "new" || action_name == "edit" %>
             <%= render "shared/footer" %>
         <% end %>
       </div>
