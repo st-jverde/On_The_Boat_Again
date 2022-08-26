@@ -23,10 +23,11 @@
     <div id="carouselExampleIndicators" class="carousel slide w-50 h-100 col-12 col-lg-6" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <% (@boat.photos.count - 1).times do |n| %>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= n + 1 %>" aria-label="Slide 2"></button>
+        <% end %>
       </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner rounded-4 carousel-shadow">
       <div class="carousel-item active">
         <%= cl_image_tag @boat.photos.first.key, class: "d-block w-100" %>
       </div>
