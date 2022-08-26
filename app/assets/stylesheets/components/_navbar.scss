@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: white;
 }
 
@@ -7,17 +8,41 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 .nav-link{
   color: white;
+  font-size: 19px;
+  font-family: ‘Roboto’, sans-serif;
+  font-style: normal;
+}
+
+.nav-item {
+  padding-right: 20px;
 }
 
 .navbar {
   position: sticky !important;
   top: 0;
-  height: 8vh;
+  height: 11vh;
   background-color: $blue-gray;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.container-fluid {
+  padding: 40px;
+  margin-right: 10px;
+}
+
+.navbar-nav {
+  padding: 50px;
+}
+
+.navbar-logo {
+  height: 80px;
+  width: 80px;
+  margin-top: 2px;
+  margin-left: 40px;
 }
