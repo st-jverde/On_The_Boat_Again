@@ -30,5 +30,4 @@ puts 'Fetching the wood, building the boats 🛥️ ...'
   boat.save!
 end
 
-
 puts 'Boats created!'
