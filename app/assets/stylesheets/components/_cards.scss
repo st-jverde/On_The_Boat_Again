@@ -8,31 +8,44 @@
   height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-content: flex-start;
   padding: 10px;
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  .card-category-text {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .header {
+    margin-bottom: -5px;
+  }
+
+  .people {
+    font-size: 14px;
+  }
+
+  .price {
+    align-self: flex-end;
+    padding: 60px 0;
+  }
+
+  .card-category-text h4, a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .card-category-text p {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+
 }
 
-.card-category-text {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
 
-.price {
-  align-self: flex-end;
-}
-
-.card-category-text h4 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.card-category-text p {
-  font-size: 12px;
-  font-weight: lighter;
-}
 
 .cards {
   display: grid;
